@@ -7,7 +7,7 @@ public class Main {
 
         Scanner dialog = new Scanner(System.in);
         System.out.println("Напишите, что Вы хотите проверить на палиндром");
-        String checkForPalindorome = dialog.nextLine();
+        String checkForPalindorome = dialog.nextLine().toLowerCase();
 
 
         checkForPalindorome = checkForPalindorome.replace(",", "");
@@ -17,14 +17,19 @@ public class Main {
         checkForPalindorome = checkForPalindorome.replace("=", "");
         checkForPalindorome = checkForPalindorome.replace("+", "");
         checkForPalindorome = checkForPalindorome.replace("_", "");
+        checkForPalindorome = checkForPalindorome.replace("/", "");
 
-        System.out.println("проверка строчки: "+checkForPalindorome);
-        System.out.println();
 
-        if  (checkForPalindorome.length() <= 1) {
+        System.out.println(checkForPalindorome.toCharArray());
 
-            System.out.println ("Слишком короктое слово для проверки на палиндром");
+        if (checkForPalindorome.length() <= 1) {
+            System.out.println("Некорректно введена строка");
+        } else {
+            System.out.println("проверка строчки: "+checkForPalindorome);
+            System.out.println();
         }
+
+
         for (int i = 0; i < checkForPalindorome.length()/2; i++) {
 
             if (checkForPalindorome.charAt(i) != checkForPalindorome.charAt(checkForPalindorome.length() - i - 1)) {
@@ -34,6 +39,9 @@ public class Main {
                  System.out.println("Это палиндром");
             }
             }
+
+
+
         }
     }
 
