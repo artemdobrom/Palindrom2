@@ -9,6 +9,7 @@ public class Main {
         System.out.println("Напишите, что Вы хотите проверить на палиндром");
         String checkForPalindorome = dialog.nextLine();
 
+
         checkForPalindorome = checkForPalindorome.replace(",", "");
         checkForPalindorome = checkForPalindorome.replace(" ", "");
         checkForPalindorome = checkForPalindorome.replace(".", "");
@@ -19,19 +20,23 @@ public class Main {
 
         System.out.println("проверка строчки: "+checkForPalindorome);
         System.out.println();
+
+        if  (checkForPalindorome.length() <= 1) {
+
+            System.out.println ("Слишком короктое слово для проверки на палиндром");
+        }
         for (int i = 0; i < checkForPalindorome.length()/2; i++) {
-            System.out.print(checkForPalindorome.charAt(i) + "-" + checkForPalindorome.charAt(checkForPalindorome.length() - i - 1));
 
-            if (checkForPalindorome.charAt(i) == checkForPalindorome.charAt(checkForPalindorome.length() - i - 1)) {
-                System.out.println(" -эта пара палиндром");
-
-            } else if (checkForPalindorome.charAt(i) != checkForPalindorome.charAt(checkForPalindorome.length() - i - 1)) {
-
-                System.out.println(" -эта пара не палиндром");
-            }
+            if (checkForPalindorome.charAt(i) != checkForPalindorome.charAt(checkForPalindorome.length() - i - 1)) {
+                System.out.println("Это не палиндром");
+                break;
+            } else if (i+1 == (checkForPalindorome.length() / 2)) {
+                 System.out.println("Это палиндром");
             }
             }
         }
+    }
+
 
 
 
