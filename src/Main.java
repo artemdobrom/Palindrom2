@@ -36,14 +36,11 @@ public class Main {
                 System.out.println("Это не палиндром");
                 break;
             } else if (i+1 == (checkForPalindorome.length() / 2)) {
-                 System.out.println("Это палиндром");
+                System.out.println("Это палиндром");
             }
-            }
-
-
-
         }
     }
+}
 
 
 
